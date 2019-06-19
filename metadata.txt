@@ -1,0 +1,59 @@
+[general]
+name=Cxf_in
+qgisMinimumVersion=2.99
+qgisMaximumVersion=3.99
+description= Caricatore file CXF Catasto 
+version=9.0.4
+author=Saccon Fabio
+
+email=saccon@gisplan.it
+changelog= v 9.0.4
+
+          
+
+          -minor bug 
+          
+about =     
+
+               
+          GEOREFERENZIAZIONE FILE CATASTALI CXF DI TUTTA L'ITALIA 
+
+                   
+          
+          La necessità di registrarsi per la georeferenziazione serve a garantire la 
+          qualità del dato e a non far proliferare sistemi di georeferenziazione che 
+          farebbero confusione.
+          La procedura di georiferimento attuale è univoca (trasformazione di datum) e 
+          riguarda in maniera omogenea tutti i fogli dell'intero del Comune di riferimento. 
+          
+          Per migliorare la georeferenziazione all'interno del singolo Comune deve 
+          essere applicata una trasformazione per singoli fogli.
+          La procedure di georiferimento dei singoli fogli è presente per la 
+          Regione Friuli Venezia Giulia. 
+          Attendo progetti specifici per ampliare la gereferenziazione per singolo 
+          foglio per altre parti del territorio italiano.
+          
+          Cxf_in carica la trasformazione globale (trasformazione di datum) e se la 
+          trova successivamente applica i parametri di correzione al singolo foglio 
+          L'applicativo per la trasformazione è già pronto. Tale procedura necessita 
+          dei fogli catastali vettorilai. Per avere informazioni non esitate a scrivermi.
+
+
+          
+          Per informazioni scrivere a saccon@gisplan.it
+
+	
+
+
+
+
+tags=  cxf, catasto,cxf_in, cadastral  
+
+tracker= http://hub.qgis.org/projects/gisplan/
+homepage= http://www.prgcloud.it/
+repository= https://drive.google.com/file/d/0B6Y-s-x2vxztVy1KcXBnaVNUbjA/edit?usp=sharing
+icon=icon.png
+
+
+experimental=True
+

@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/plugins/Cxf_in">
+    <file alias="giu.png">immagini/blue-down-arrow.png</file>
+    <file alias="sx.png">immagini/blue-left-arrow.png</file>
+    <file alias="su.png">immagini/blue-up-arrow.png</file>
+    <file alias="dx.png">immagini/blue-right-arrow.png</file>
+    <file alias="GPL3.png">immagini/GPL3.png</file>
+    <file alias="icon.png">immagini/icon.png</file>
+    <file alias="logonewsmall.png">immagini/logonewsmall.png</file>
+    <file alias="paypal.png">immagini/paypal.png</file>
+    <file alias="supporto.png">immagini/supporto.png</file>
+  </qresource>
+</RCC>
