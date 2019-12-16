@@ -28,6 +28,7 @@ from PyQt5.QtWidgets  import QMessageBox
 import contextlib
 import math
 import urllib
+import ssl
 
 
 class foglio(object):
@@ -134,14 +135,14 @@ def gaussovest(self, x, y):
 def tras_param(self,file):      
 
         if self.ui.etrs89_db.isChecked()==False:
-            req='http://www.prgcloud.com/auth/gettransform.php?username='+self.ui.user.text()+'&password='+self.ui.password.text()+'&foglio='+file.split(".")[0]
+            req='https://www.prgcloud.com/auth/gettransform.php?username='+self.ui.user.text()+'&password='+self.ui.password.text()+'&foglio='+file.split(".")[0]
         else:
-            req='http://www.prgcloud.com/auth/gettransform.php?username='+self.ui.user.text()+'&password='+self.ui.password.text()+'&foglio='+file.split(".")[0]+'&trasf=3045'
+            req='https://www.prgcloud.com/auth/gettransform.php?username='+self.ui.user.text()+'&password='+self.ui.password.text()+'&foglio='+file.split(".")[0]+'&trasf=3045'
 
         html=""
         print(req)
         try:
-                with contextlib.closing(urllib.request.urlopen(req)) as x:
+                with contextlib.closing(urllib.request.urlopen(req, context=ssl._create_unverified_context())) as x:
                   for line in x:
                       html=line.decode()
                       break

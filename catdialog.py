@@ -35,6 +35,7 @@ from  .db_create import *
 
 # create the dialog for zoom to point
 import urllib
+import ssl
 import fileinput
 import sys, os, imp, re
 import psycopg2
@@ -323,10 +324,10 @@ class catDialog(QDockWidget):
         else:
             try:
 
-                req = 'http://www.prgcloud.com/auth/usercheck.php?username=' + self.ui.user.text() + '&password=' + self.ui.password.text()
+                req = 'https://www.prgcloud.com/auth/usercheck.php?username=' + self.ui.user.text() + '&password=' + self.ui.password.text()
                 try:
 
-                    with contextlib.closing(urllib.request.urlopen(req)) as x:
+                    with contextlib.closing(urllib.request.urlopen(req, context=ssl._create_unverified_context())) as x:
                         for line in x:
                             #print (line)
                             html = line
@@ -765,7 +766,7 @@ class catDialog(QDockWidget):
             print(req)
             self.ui.georef_db.setChecked(True)
             try:
-                with contextlib.closing(urllib.request.urlopen(req)) as x:
+                with contextlib.closing(urllib.request.urlopen(req, context=ssl._create_unverified_context())) as x:
                     for line in x:
                         html = line.decode()
                         break
@@ -835,7 +836,7 @@ class catDialog(QDockWidget):
             req = 'https://www.prgcloud.com/auth/settransform.php?username=' + self.ui.user.text() + '&password=' + self.ui.password.text() + '&foglio=' +item.child(i).text(0)\
                   + '&traslx=' + foglio.traslx + '&trasly=' + foglio.trasly + '&orig=' + foglio.orig + '&rotang=' + foglio.rotang + '&scalex=' + foglio.scalex + '&scaley=' + foglio.scaley
             try:
-                with contextlib.closing(urllib.request.urlopen(req)) as x:
+                with contextlib.closing(urllib.request.urlopen(req, context=ssl._create_unverified_context())) as x:
                     for line in x:
                         html = line.decode()
                         break
@@ -862,7 +863,7 @@ class catDialog(QDockWidget):
             req = 'https://www.prgcloud.com/auth/settransform.php?username=' + self.ui.user.text() + '&password=' + self.ui.password.text() + '&foglio=' +baseNode.text(0)+ '&traslx='+foglio.traslx+ '&trasly='+foglio.trasly+'&orig='+foglio.orig+'&rotang='+foglio.rotang+'&scalex='+foglio.scalex+'&scaley='+foglio.scaley
             print (req)
             try:
-                with contextlib.closing(urllib.request.urlopen(req)) as x:
+                with contextlib.closing(urllib.request.urlopen(req, context=ssl._create_unverified_context())) as x:
                     for line in x:
                         html = line.decode()
                         break
